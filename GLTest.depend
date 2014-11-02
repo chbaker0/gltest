@@ -1,0 +1,111 @@
+# depslib dependency file v1.0
+1414316912 source:d:\development\graphics\gltest\glshader.cpp
+	"GLShader.h"
+
+1414316891 d:\development\graphics\gltest\glshader.h
+	"Includes.h"
+
+1414882838 d:\development\graphics\gltest\includes.h
+	<iostream>
+	<fstream>
+	<map>
+	<string>
+	<vector>
+	<algorithm>
+	<exception>
+	<thread>
+	<utility>
+	<limits>
+	<cassert>
+	<glload/gl_all.h>
+	<glload/gl_load.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/constants.hpp>
+	<glimg/glimg.h>
+	<assimp/Importer.hpp>
+	<assimp/scene.h>
+	<assimp/postprocess.h>
+	<assimp/types.h>
+
+1414316921 source:d:\development\graphics\gltest\glshaderprogram.cpp
+	"GLShaderProgram.h"
+
+1414352989 d:\development\graphics\gltest\glshaderprogram.h
+	"Includes.h"
+	"GLShader.h"
+
+1414910922 source:d:\development\graphics\gltest\main.cpp
+	"Includes.h"
+	"ContextWindow.hpp"
+	"Texture.hpp"
+	"Shader.hpp"
+	"ShaderProgram.hpp"
+	"ShaderProgramManager.hpp"
+	"StaticMesh.h"
+
+1414882838 source:d:\development\graphics\gltest\includes.h
+	<iostream>
+	<fstream>
+	<map>
+	<string>
+	<vector>
+	<algorithm>
+	<exception>
+	<thread>
+	<utility>
+	<limits>
+	<cassert>
+	<glload/gl_all.h>
+	<glload/gl_load.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/constants.hpp>
+	<glimg/glimg.h>
+	<assimp/Importer.hpp>
+	<assimp/scene.h>
+	<assimp/postprocess.h>
+	<assimp/types.h>
+
+1414909797 source:d:\development\graphics\gltest\staticmesh.cpp
+	"StaticMesh.h"
+
+1414803823 d:\development\graphics\gltest\staticmesh.h
+	"Includes.h"
+
+1414874112 source:d:\development\graphics\gltest\texture.cpp
+	"Texture.hpp"
+
+1414875622 d:\development\graphics\gltest\texture.hpp
+	"Includes.h"
+
+1414961420 d:\development\graphics\gltest\shader.hpp
+	"Includes.h"
+
+1414882444 d:\development\graphics\gltest\shaderprogram.hpp
+	"Includes.h"
+	"Shader.hpp"
+
+1414876284 source:d:\development\graphics\gltest\shader.cpp
+	"Shader.hpp"
+
+1414876288 source:d:\development\graphics\gltest\shaderprogram.cpp
+	"ShaderProgram.hpp"
+
+1414904881 source:d:\development\graphics\gltest\shaderprogrammanager.cpp
+	"ShaderProgramManager.hpp"
+
+1414904861 d:\development\graphics\gltest\shaderprogrammanager.hpp
+	"Includes.h"
+	"ShaderProgram.hpp"
+
+1414901011 source:d:\development\graphics\gltest\contextwindow.cpp
+	"ContextWindow.hpp"
+
+1414900958 d:\development\graphics\gltest\contextwindow.hpp
+	"Includes.h"
+
