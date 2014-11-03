@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <exception>
 #include <thread>
+#include <memory>
 #include <utility>
 #include <limits>
 
@@ -21,10 +22,7 @@
 #include <glload/gl_all.h>
 #include <glload/gl_load.h>
 #include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-#include <glm/gtc/constants.hpp>
+#include <glm/fwd.hpp>
 #include <glimg/glimg.h>
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>

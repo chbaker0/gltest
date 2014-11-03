@@ -1,5 +1,8 @@
 #include "ShaderProgramManager.hpp"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 ShaderProgramManager *globalProgramManager;
 
 template <>

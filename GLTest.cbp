@@ -30,11 +30,22 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
+			<Target title="NoDebug">
+				<Option output="bin/NoDebug/GLTest" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/NoDebug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O0" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
+			<Add option="-pipe" />
 		</Compiler>
 		<Linker>
 			<Add library="libglimg.a" />
@@ -51,6 +62,8 @@
 			<Option compile="1" />
 			<Option weight="0" />
 		</Unit>
+		<Unit filename="Light.cpp" />
+		<Unit filename="Light.hpp" />
 		<Unit filename="Material.hpp" />
 		<Unit filename="Shader.cpp" />
 		<Unit filename="Shader.hpp" />

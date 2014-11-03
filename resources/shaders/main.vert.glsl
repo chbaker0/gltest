@@ -1,4 +1,4 @@
-#version 430
+#version 440
 
 layout (location = 0) in vec4 position;
 layout (location = 1) in vec4 normal;
@@ -8,15 +8,25 @@ layout (location = 0) uniform mat4 modelCameraTransform;
 layout (location = 1) uniform mat4 cameraClipTransform;
 
 out vec3 fragNormal;
-out vec3 modelSpacePosition;
+out vec3 cameraSpacePosition;
 out vec2 fragTexCoord;
+
+layout (std430, binding = 0) buffer PointLights
+{
+    struct PointLight
+    {
+        vec4 intensity;
+        vec3 position;
+        float attenuation;
+    } pointLights[];
+};
 
 void main()
 {
-    vec4 cameraPosition = modelCameraTransform * vec4(position.xyz, 1.0);
+    vec4 cameraPosition = modelCameraTransform * vec4(position.xyz - vec3(0.0, 0.0, 0.5), 1.0);
     gl_Position = cameraClipTransform * cameraPosition;
 
-    modelSpacePosition = position.xyz;
+    cameraSpacePosition = cameraSpacePosition.xyz;
     fragNormal = normal.xyz;
     fragTexCoord = texCoord;
 }

@@ -6,6 +6,11 @@
 #include "ShaderProgram.hpp"
 #include "ShaderProgramManager.hpp"
 #include "StaticMesh.h"
+#include "Light.hpp"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 #ifdef DEBUG
 void APIENTRY debugCallback(GLenum source,
@@ -85,22 +90,74 @@ int main()
 	monkeyTexture.setParameter(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	monkeyTexture.setParameter(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
+    PointLight pointLightsWorldSpace[2] =
+    {
+        {{1.0f, 1.0f, 1.0f, 1.0f}, {0.0f, 0.0f, 5.0f}, 1.0f},
+        {{1.0f, 0.0f, 0.0f, 1.0f}, {0.0f, -2.0f, 2.0f}, 1.0f}
+    };
+
+	GLuint pointLightBlock;
+	glGenBuffers(1, &pointLightBlock);
+	glBindBuffer(GL_SHADER_STORAGE_BUFFER, pointLightBlock);
+//	glBufferData(GL_SHADER_STORAGE_BUFFER,
+//                 PointLight::calcArraySizeStd430(2),
+//                 nullptr, )
+	glBufferStorage(GL_SHADER_STORAGE_BUFFER,
+                    PointLight::calcArraySizeStd430(2),
+                    nullptr, GL_MAP_WRITE_BIT);
+
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
+
+    double currentTime = 0.0f;
 	while(!win.shouldClose())
 	{
+	    double lastTime = currentTime;
+	    currentTime = glfwGetTime();
+        double deltaTime = currentTime - lastTime;
+	    // Clear screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		// Select shader program
 		prog->use();
 
+        // Calculate transformation matrices
 		glm::mat4 cameraClipTransform = glm::perspective(70.0f, 1.0f, 1.0f, 50.0f);
 		glm::mat4 modelWorldTransform(1.0f);
 		glm::mat4 worldCameraTransform(1.0f);
         worldCameraTransform =
-            glm::lookAt(glm::vec3{7.0f, -7.0f, 4.0f},
+            glm::lookAt(glm::vec3{0.0f,-5.0f, 0.0f},
                                  {0.0f, 0.0f, 0.0f},
                                  {0.0f, 0.0f, 1.0f});
 
+        // Update light positions
+        pointLightsWorldSpace[0].position =
+            glm::vec3(2.0 * glm::sin(currentTime),
+                      2.0 * glm::cos(currentTime),
+                      0.0f);
+
+        // Write the light data to the shader storage buffer
+        glBindBuffer(GL_SHADER_STORAGE_BUFFER, pointLightBlock);
+        void *buffer = glMapBuffer(GL_SHADER_STORAGE_BUFFER,
+                                   GL_WRITE_ONLY);
+        if(buffer == nullptr)
+            return 1;
+
+        std::size_t offset = 0;
+        for(std::size_t i = 0; i < 2; ++i)
+        {
+            offset = pointLightsWorldSpace[i]
+                     .writeStd430Transform(buffer, offset,
+                                           PointLight::calcArraySizeStd430(2),
+                                           worldCameraTransform);
+        }
+        glUnmapBuffer(GL_SHADER_STORAGE_BUFFER);
+        glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, pointLightBlock);
+        glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
+
+        // Send the model->camera and camera->clip transformation matrices to shader program
 		glUniformMatrix4fv(1, 1, false, glm::value_ptr(cameraClipTransform));
 		glUniformMatrix4fv(0, 1, false, glm::value_ptr(worldCameraTransform * modelWorldTransform));
 
+        // Bind the texture and draw
         monkeyTexture.bindTo(0);
         testCube.bindVertexArray();
         glDrawElements(GL_TRIANGLES, testCube.getIndexCount(), GL_UNSIGNED_SHORT, 0);

@@ -5,7 +5,7 @@
 1414316891 d:\development\graphics\gltest\glshader.h
 	"Includes.h"
 
-1414882838 d:\development\graphics\gltest\includes.h
+1414974581 d:\development\graphics\gltest\includes.h
 	<iostream>
 	<fstream>
 	<map>
@@ -14,16 +14,14 @@
 	<algorithm>
 	<exception>
 	<thread>
+	<memory>
 	<utility>
 	<limits>
 	<cassert>
 	<glload/gl_all.h>
 	<glload/gl_load.h>
 	<GLFW/glfw3.h>
-	<glm/glm.hpp>
-	<glm/gtc/matrix_transform.hpp>
-	<glm/gtc/type_ptr.hpp>
-	<glm/gtc/constants.hpp>
+	<glm/fwd.hpp>
 	<glimg/glimg.h>
 	<assimp/Importer.hpp>
 	<assimp/scene.h>
@@ -37,7 +35,7 @@
 	"Includes.h"
 	"GLShader.h"
 
-1414910922 source:d:\development\graphics\gltest\main.cpp
+1414986149 source:d:\development\graphics\gltest\main.cpp
 	"Includes.h"
 	"ContextWindow.hpp"
 	"Texture.hpp"
@@ -45,8 +43,12 @@
 	"ShaderProgram.hpp"
 	"ShaderProgramManager.hpp"
 	"StaticMesh.h"
+	"Light.hpp"
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
 
-1414882838 source:d:\development\graphics\gltest\includes.h
+1414974581 source:d:\development\graphics\gltest\includes.h
 	<iostream>
 	<fstream>
 	<map>
@@ -55,16 +57,14 @@
 	<algorithm>
 	<exception>
 	<thread>
+	<memory>
 	<utility>
 	<limits>
 	<cassert>
 	<glload/gl_all.h>
 	<glload/gl_load.h>
 	<GLFW/glfw3.h>
-	<glm/glm.hpp>
-	<glm/gtc/matrix_transform.hpp>
-	<glm/gtc/type_ptr.hpp>
-	<glm/gtc/constants.hpp>
+	<glm/fwd.hpp>
 	<glimg/glimg.h>
 	<assimp/Importer.hpp>
 	<assimp/scene.h>
@@ -96,8 +96,10 @@
 1414876288 source:d:\development\graphics\gltest\shaderprogram.cpp
 	"ShaderProgram.hpp"
 
-1414904881 source:d:\development\graphics\gltest\shaderprogrammanager.cpp
+1414967917 source:d:\development\graphics\gltest\shaderprogrammanager.cpp
 	"ShaderProgramManager.hpp"
+	<glm/glm.hpp>
+	<glm/gtc/type_ptr.hpp>
 
 1414904861 d:\development\graphics\gltest\shaderprogrammanager.hpp
 	"Includes.h"
@@ -108,4 +110,11 @@
 
 1414900958 d:\development\graphics\gltest\contextwindow.hpp
 	"Includes.h"
+
+1414986196 source:d:\development\graphics\gltest\light.cpp
+	"Light.hpp"
+
+1414985870 d:\development\graphics\gltest\light.hpp
+	"Includes.h"
+	<glm/glm.hpp>
 
