@@ -23,11 +23,11 @@ layout (std430, binding = 0) buffer PointLights
 
 void main()
 {
-    vec4 cameraPosition = modelCameraTransform * vec4(position.xyz - vec3(0.0, 0.0, 0.5), 1.0);
+    vec4 cameraPosition = modelCameraTransform * vec4(position.xyz, 1.0);
     gl_Position = cameraClipTransform * cameraPosition;
 
-    cameraSpacePosition = cameraSpacePosition.xyz;
-    fragNormal = normal.xyz;
+    cameraSpacePosition = cameraPosition.xyz;
+    fragNormal = mat3(modelCameraTransform) * vec3(normal.xyz);
     fragTexCoord = texCoord;
 }
 

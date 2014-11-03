@@ -23,6 +23,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-march=corei7-avx" />
 					<Add option="-O2" />
 					<Add directory="include" />
 				</Compiler>
@@ -39,6 +40,21 @@
 					<Add option="-O0" />
 					<Add directory="include" />
 				</Compiler>
+			</Target>
+			<Target title="DebugCov">
+				<Option output="bin/DebugCov/GLTest" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/DebugCov/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-pg" />
+					<Add option="-g" />
+					<Add option="-DDEBUG" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-pg -lgmon" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>

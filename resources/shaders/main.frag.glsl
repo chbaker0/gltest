@@ -41,13 +41,13 @@ void main()
         vec3 viewDirection = normalize(-vec3(cameraSpacePosition));
         vec3 halfAngleVector = normalize(viewDirection + lightDirection);
         float halfAngle = acos(dot(halfAngleVector, surfaceNormal));
-        float exponent = halfAngle;
+        float exponent = halfAngle / 0.3;
         float gaussian = exp(-(exponent * exponent));
         gaussian = cosAngleIncidence != 0.0f ? gaussian : 0.0f;
 
         totalDiffuseLighting +=
-            (diffuseColor * cosAngleIncidence * pointLights[i].intensity);
-        totalSpecularLighting += gaussian * pointLights[i].intensity / lightDistance;
+            (diffuseColor * cosAngleIncidence * pointLights[i].intensity) / (lightDistance * lightDistance);
+        totalSpecularLighting += gaussian * pointLights[i].intensity / (lightDistance * lightDistance);
     }
 //    for(int i = 0; i < pointLights.length(); ++i)
 //    {
@@ -65,5 +65,5 @@ void main()
 //                / (fragLightDistance);
 //    }
 
-    outColor = totalDiffuseLighting ;
+    outColor = totalDiffuseLighting + totalSpecularLighting;
 }

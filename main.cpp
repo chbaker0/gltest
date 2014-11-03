@@ -62,6 +62,8 @@ int main()
 	glDepthMask(GL_TRUE);
 	glDepthFunc(GL_LEQUAL);
 	glDepthRange(0.0f, 1.0f);
+	glEnable(GL_CULL_FACE);
+	glFrontFace(GL_CCW);
 
     StaticMesh testCube("resources/meshes/monkey.dae");
 
@@ -124,20 +126,20 @@ int main()
 		glm::mat4 modelWorldTransform(1.0f);
 		glm::mat4 worldCameraTransform(1.0f);
         worldCameraTransform =
-            glm::lookAt(glm::vec3{0.0f,-5.0f, 0.0f},
+            glm::lookAt(glm::vec3{3.0f,-4.0f, 2.0f},
                                  {0.0f, 0.0f, 0.0f},
                                  {0.0f, 0.0f, 1.0f});
 
         // Update light positions
         pointLightsWorldSpace[0].position =
-            glm::vec3(2.0 * glm::sin(currentTime),
-                      2.0 * glm::cos(currentTime),
-                      0.0f);
+            glm::vec3(1.8 * glm::sin(currentTime),
+                      1.8 * glm::cos(currentTime),
+                      2.0f);
 
         // Write the light data to the shader storage buffer
         glBindBuffer(GL_SHADER_STORAGE_BUFFER, pointLightBlock);
         void *buffer = glMapBuffer(GL_SHADER_STORAGE_BUFFER,
-                                   GL_WRITE_ONLY);
+                                   GL_WRITE_ONLY | GL_MAP_INVALIDATE_BUFFER_BIT);
         if(buffer == nullptr)
             return 1;
 
