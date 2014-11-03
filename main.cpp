@@ -12,6 +12,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include <glload/gl_load.h>
+
 #ifdef DEBUG
 void APIENTRY debugCallback(GLenum source,
                             GLenum type,
@@ -66,6 +68,7 @@ int main()
 	glFrontFace(GL_CCW);
 
     StaticMesh testCube("resources/meshes/monkey.dae");
+    StaticMesh groundPlane("resources/meshes/ground_plane.dae");
 
 	std::string log;
 	ShaderProgram *prog = globalProgramManager->createProgram("main");
@@ -91,6 +94,12 @@ int main()
 	monkeyTexture.setParameter(GL_TEXTURE_WRAP_T, GL_REPEAT);
 	monkeyTexture.setParameter(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	monkeyTexture.setParameter(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	Texture groundPlaneTexture(GL_TEXTURE_2D, "resources/textures/ground_plane_diffuse.png");
+	groundPlaneTexture.setParameter(GL_TEXTURE_WRAP_S, GL_REPEAT);
+	groundPlaneTexture.setParameter(GL_TEXTURE_WRAP_T, GL_REPEAT);
+	groundPlaneTexture.setParameter(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	groundPlaneTexture.setParameter(GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     PointLight pointLightsWorldSpace[2] =
     {
@@ -124,8 +133,10 @@ int main()
         // Calculate transformation matrices
 		glm::mat4 cameraClipTransform = glm::perspective(70.0f, 1.0f, 1.0f, 50.0f);
 		glm::mat4 modelWorldTransform(1.0f);
-		glm::mat4 worldCameraTransform(1.0f);
-        worldCameraTransform =
+        modelWorldTransform =
+            glm::translate(modelWorldTransform,
+                           {0.0f, 0.0f, 1.5f});
+		glm::mat4 worldCameraTransform =
             glm::lookAt(glm::vec3{3.0f,-4.0f, 2.0f},
                                  {0.0f, 0.0f, 0.0f},
                                  {0.0f, 0.0f, 1.0f});
@@ -163,6 +174,13 @@ int main()
         monkeyTexture.bindTo(0);
         testCube.bindVertexArray();
         glDrawElements(GL_TRIANGLES, testCube.getIndexCount(), GL_UNSIGNED_SHORT, 0);
+
+        modelWorldTransform = glm::mat4(1.0f);
+		glUniformMatrix4fv(0, 1, false, glm::value_ptr(worldCameraTransform * modelWorldTransform));
+
+        groundPlaneTexture.bindTo(0);
+        groundPlane.bindVertexArray();
+        glDrawElements(GL_TRIANGLES, groundPlane.getIndexCount(), GL_UNSIGNED_SHORT, 0);
 
 		win.swapBuffers();
 		win.pollEvents();

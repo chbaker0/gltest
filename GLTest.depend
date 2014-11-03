@@ -5,7 +5,7 @@
 1414316891 d:\development\graphics\gltest\glshader.h
 	"Includes.h"
 
-1414974581 d:\development\graphics\gltest\includes.h
+1415050917 d:\development\graphics\gltest\includes.h
 	<iostream>
 	<fstream>
 	<map>
@@ -18,8 +18,7 @@
 	<utility>
 	<limits>
 	<cassert>
-	<glload/gl_all.h>
-	<glload/gl_load.h>
+	<glload/gl_core.h>
 	<GLFW/glfw3.h>
 	<glm/fwd.hpp>
 	<glimg/glimg.h>

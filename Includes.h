@@ -19,8 +19,7 @@
 
 //#define GLEW_STATIC
 //#include <GL/glew.h>
-#include <glload/gl_all.h>
-#include <glload/gl_load.h>
+#include <glload/gl_core.h>
 #include <GLFW/glfw3.h>
 #include <glm/fwd.hpp>
 #include <glimg/glimg.h>

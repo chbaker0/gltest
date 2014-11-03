@@ -55,4 +55,12 @@ private:
     GLenum target;
 };
 
+class Texture2D : public Texture
+{
+public:
+    Texture2D(): Texture(GL_TEXTURE_2D) {}
+    Texture2D(const std::string& infile):
+        Texture(GL_TEXTURE_2D, infile) {}
+};
+
 #endif // TEXTURE_HPP_INCLUDED
