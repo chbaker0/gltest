@@ -31,7 +31,7 @@ int main()
 	ContextWindow win;
 
 	win.setHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	win.setHint(GLFW_CONTEXT_VERSION_MINOR, 4);
+	win.setHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	win.setHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	win.setHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	win.setHint(GLFW_RESIZABLE, GL_FALSE);
@@ -42,10 +42,11 @@ int main()
 
 	win.setDimensions(800, 800);
     win.setTitle("Test");
-    win.create();
+    if(!win.create())
+        return 1;
 	win.makeCurrent();
 
-    if(ogl_LoadFunctions() == ogl_LOAD_FAILED) return 1;
+    if(ogl_LoadFunctions() == ogl_LOAD_FAILED) return 2;
 
     glViewport(0, 0, 800, 800);
 
@@ -152,7 +153,7 @@ int main()
         void *buffer = glMapBuffer(GL_SHADER_STORAGE_BUFFER,
                                    GL_WRITE_ONLY | GL_MAP_INVALIDATE_BUFFER_BIT);
         if(buffer == nullptr)
-            return 1;
+            return 3;
 
         std::size_t offset = 0;
         for(std::size_t i = 0; i < 2; ++i)

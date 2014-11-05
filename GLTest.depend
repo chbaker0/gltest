@@ -34,7 +34,7 @@
 	"Includes.h"
 	"GLShader.h"
 
-1414991335 source:d:\development\graphics\gltest\main.cpp
+1415077901 source:d:\development\graphics\gltest\main.cpp
 	"Includes.h"
 	"ContextWindow.hpp"
 	"Texture.hpp"
@@ -46,8 +46,9 @@
 	<glm/glm.hpp>
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtc/type_ptr.hpp>
+	<glload/gl_load.h>
 
-1414974581 source:d:\development\graphics\gltest\includes.h
+1415050917 source:d:\development\graphics\gltest\includes.h
 	<iostream>
 	<fstream>
 	<map>
@@ -60,8 +61,7 @@
 	<utility>
 	<limits>
 	<cassert>
-	<glload/gl_all.h>
-	<glload/gl_load.h>
+	<glload/gl_core.h>
 	<GLFW/glfw3.h>
 	<glm/fwd.hpp>
 	<glimg/glimg.h>
@@ -79,7 +79,7 @@
 1414874112 source:d:\development\graphics\gltest\texture.cpp
 	"Texture.hpp"
 
-1414875622 d:\development\graphics\gltest\texture.hpp
+1415052918 d:\development\graphics\gltest\texture.hpp
 	"Includes.h"
 
 1414961420 d:\development\graphics\gltest\shader.hpp
