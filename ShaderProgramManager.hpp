@@ -31,7 +31,7 @@ public:
     }
 
     template <typename T>
-    void setGlobalUniform(unsigned int loc, const T& value);
+    void setGlobalUniform(unsigned int loc, const T& value) const;
 
 private:
     ContainerType programs;

@@ -80,6 +80,7 @@
 		</Unit>
 		<Unit filename="Light.cpp" />
 		<Unit filename="Light.hpp" />
+		<Unit filename="Material.cpp" />
 		<Unit filename="Material.hpp" />
 		<Unit filename="Shader.cpp" />
 		<Unit filename="Shader.hpp" />
