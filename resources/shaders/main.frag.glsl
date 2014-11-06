@@ -10,14 +10,16 @@ layout (location = 2) uniform vec4 color;
 
 layout (binding = 0) uniform sampler2D diffuseTex;
 
+struct PointLight
+{
+    vec4 intensity;
+    vec3 position;
+    float attenuation;
+};
+
 layout (std430, binding = 0) buffer PointLights
 {
-    struct PointLight
-    {
-        vec4 intensity;
-        vec3 position;
-        float attenuation;
-    } pointLights[];
+    PointLight pointLights[];
 };
 
 void main()

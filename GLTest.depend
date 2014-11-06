@@ -117,3 +117,117 @@
 	"Includes.h"
 	<glm/glm.hpp>
 
+1415240345 source:c:\development\projects\opengl\gltest\includes.h
+	<iostream>
+	<fstream>
+	<map>
+	<string>
+	<vector>
+	<algorithm>
+	<exception>
+	<thread>
+	<memory>
+	<utility>
+	<limits>
+	<cassert>
+	<glload/gl_core.h>
+	<GLFW/glfw3.h>
+	<glm/fwd.hpp>
+	<glimg/glimg.h>
+	<assimp/Importer.hpp>
+	<assimp/scene.h>
+	<assimp/postprocess.h>
+	<assimp/types.h>
+
+1415043266 source:c:\development\projects\opengl\gltest\contextwindow.cpp
+	"ContextWindow.hpp"
+
+1415043266 c:\development\projects\opengl\gltest\contextwindow.hpp
+	"Includes.h"
+
+1415240345 c:\development\projects\opengl\gltest\includes.h
+	<iostream>
+	<fstream>
+	<map>
+	<string>
+	<vector>
+	<algorithm>
+	<exception>
+	<thread>
+	<memory>
+	<utility>
+	<limits>
+	<cassert>
+	<glload/gl_core.h>
+	<GLFW/glfw3.h>
+	<glm/fwd.hpp>
+	<glimg/glimg.h>
+	<assimp/Importer.hpp>
+	<assimp/scene.h>
+	<assimp/postprocess.h>
+	<assimp/types.h>
+
+1415043266 source:c:\development\projects\opengl\gltest\light.cpp
+	"Light.hpp"
+
+1415043266 c:\development\projects\opengl\gltest\light.hpp
+	"Includes.h"
+	<glm/glm.hpp>
+
+1415240345 source:c:\development\projects\opengl\gltest\main.cpp
+	"Includes.h"
+	"ContextWindow.hpp"
+	"Texture.hpp"
+	"Shader.hpp"
+	"ShaderProgram.hpp"
+	"ShaderProgramManager.hpp"
+	"StaticMesh.h"
+	"Light.hpp"
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glload/gl_load.h>
+
+1415240345 c:\development\projects\opengl\gltest\texture.hpp
+	"Includes.h"
+
+1415043266 c:\development\projects\opengl\gltest\shader.hpp
+	"Includes.h"
+
+1415043266 c:\development\projects\opengl\gltest\shaderprogram.hpp
+	"Includes.h"
+	"Shader.hpp"
+
+1415240345 c:\development\projects\opengl\gltest\shaderprogrammanager.hpp
+	"Includes.h"
+	"ShaderProgram.hpp"
+
+1415043266 c:\development\projects\opengl\gltest\staticmesh.h
+	"Includes.h"
+
+1415240345 source:c:\development\projects\opengl\gltest\material.cpp
+	"Includes.h"
+	"Material.hpp"
+
+1415240345 c:\development\projects\opengl\gltest\material.hpp
+	"Texture.hpp"
+	"ShaderProgram.hpp"
+	"ShaderProgramManager.hpp"
+
+1415043266 source:c:\development\projects\opengl\gltest\shader.cpp
+	"Shader.hpp"
+
+1415043266 source:c:\development\projects\opengl\gltest\shaderprogram.cpp
+	"ShaderProgram.hpp"
+
+1415240345 source:c:\development\projects\opengl\gltest\shaderprogrammanager.cpp
+	"ShaderProgramManager.hpp"
+	<glm/glm.hpp>
+	<glm/gtc/type_ptr.hpp>
+
+1415043266 source:c:\development\projects\opengl\gltest\staticmesh.cpp
+	"StaticMesh.h"
+
+1415043266 source:c:\development\projects\opengl\gltest\texture.cpp
+	"Texture.hpp"
+

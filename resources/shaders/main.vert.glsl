@@ -11,14 +11,16 @@ out vec3 fragNormal;
 out vec3 cameraSpacePosition;
 out vec2 fragTexCoord;
 
+struct PointLight
+{
+    vec4 intensity;
+    vec3 position;
+    float attenuation;
+};
+
 layout (std430, binding = 0) buffer PointLights
 {
-    struct PointLight
-    {
-        vec4 intensity;
-        vec3 position;
-        float attenuation;
-    } pointLights[];
+    PointLight pointLights[];
 };
 
 void main()
@@ -30,4 +32,3 @@ void main()
     fragNormal = mat3(modelCameraTransform) * vec3(normal.xyz);
     fragTexCoord = texCoord;
 }
-

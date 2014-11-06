@@ -3,13 +3,27 @@
 void Shader::loadSource(const std::string& source)
 {
 	const char *source_c_str = source.c_str();
-	glShaderSource(handle, 1, &source_c_str, nullptr);
+	GLint len = source.length();
+	glShaderSource(handle, 1, &source_c_str, &len);
 }
 void Shader::loadSource(std::ifstream& source_file)
 {
 	std::string source;
-	while(source_file)
-		source.push_back(source_file.get());
+	#ifdef DEBUG
+	unsigned int cnt = 0;
+	#endif // DEBUG
+	char c;
+	while(source_file.get(c))
+    {
+		source.push_back(c);
+        #ifdef DEBUG
+        ++cnt;
+        #endif // DEBUG
+    }
+    #ifdef DEBUG
+    if(!cnt)
+        std::cerr << "No characters loaded from shader file!" << std::endl;
+    #endif // DEBUG
 	loadSource(source);
 }
 void Shader::loadSource(std::ifstream&& source_file)
