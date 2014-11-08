@@ -95,12 +95,12 @@
 1414876288 source:d:\development\graphics\gltest\shaderprogram.cpp
 	"ShaderProgram.hpp"
 
-1414967917 source:d:\development\graphics\gltest\shaderprogrammanager.cpp
+1415231723 source:d:\development\graphics\gltest\shaderprogrammanager.cpp
 	"ShaderProgramManager.hpp"
 	<glm/glm.hpp>
 	<glm/gtc/type_ptr.hpp>
 
-1414904861 d:\development\graphics\gltest\shaderprogrammanager.hpp
+1415231683 d:\development\graphics\gltest\shaderprogrammanager.hpp
 	"Includes.h"
 	"ShaderProgram.hpp"
 
@@ -230,4 +230,13 @@
 
 1415043266 source:c:\development\projects\opengl\gltest\texture.cpp
 	"Texture.hpp"
+
+1415231737 source:d:\development\graphics\gltest\material.cpp
+	"Includes.h"
+	"Material.hpp"
+
+1415231668 d:\development\graphics\gltest\material.hpp
+	"Texture.hpp"
+	"ShaderProgram.hpp"
+	"ShaderProgramManager.hpp"
 
