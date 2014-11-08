@@ -145,11 +145,12 @@
 1415043266 c:\development\projects\opengl\gltest\contextwindow.hpp
 	"Includes.h"
 
-1415240345 c:\development\projects\opengl\gltest\includes.h
+1415420893 c:\development\projects\opengl\gltest\includes.h
 	<iostream>
 	<fstream>
 	<map>
 	<string>
+	<deque>
 	<vector>
 	<algorithm>
 	<exception>
@@ -194,11 +195,11 @@
 1415043266 c:\development\projects\opengl\gltest\shader.hpp
 	"Includes.h"
 
-1415043266 c:\development\projects\opengl\gltest\shaderprogram.hpp
+1415419959 c:\development\projects\opengl\gltest\shaderprogram.hpp
 	"Includes.h"
 	"Shader.hpp"
 
-1415240345 c:\development\projects\opengl\gltest\shaderprogrammanager.hpp
+1415421412 c:\development\projects\opengl\gltest\shaderprogrammanager.hpp
 	"Includes.h"
 	"ShaderProgram.hpp"
 
@@ -214,16 +215,16 @@
 	"ShaderProgram.hpp"
 	"ShaderProgramManager.hpp"
 
-1415043266 source:c:\development\projects\opengl\gltest\shader.cpp
+1415302705 source:c:\development\projects\opengl\gltest\shader.cpp
 	"Shader.hpp"
 
-1415043266 source:c:\development\projects\opengl\gltest\shaderprogram.cpp
+1415420394 source:c:\development\projects\opengl\gltest\shaderprogram.cpp
 	"ShaderProgram.hpp"
-
-1415240345 source:c:\development\projects\opengl\gltest\shaderprogrammanager.cpp
-	"ShaderProgramManager.hpp"
 	<glm/glm.hpp>
 	<glm/gtc/type_ptr.hpp>
+
+1415420385 source:c:\development\projects\opengl\gltest\shaderprogrammanager.cpp
+	"ShaderProgramManager.hpp"
 
 1415043266 source:c:\development\projects\opengl\gltest\staticmesh.cpp
 	"StaticMesh.h"

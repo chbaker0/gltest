@@ -9,7 +9,7 @@ class ShaderProgramManager
 public:
     ShaderProgramManager() {}
 
-    using ContainerType =
+    using MapType =
         std::map<std::string, std::unique_ptr<ShaderProgram>>;
 
     void registerProgram(std::string name, std::unique_ptr<ShaderProgram> prog)
@@ -31,10 +31,14 @@ public:
     }
 
     template <typename T>
-    void setGlobalUniform(unsigned int loc, const T& value) const;
+    void setGlobalUniform(unsigned int loc, const T& value) const
+    {
+        for(const auto& p : programs)
+            p.second->setUniform(loc, value);
+    }
 
 private:
-    ContainerType programs;
+    MapType programs;
 };
 
 extern ShaderProgramManager *globalProgramManager;

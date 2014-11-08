@@ -29,6 +29,9 @@ public:
 		return handle;
 	}
 
+	template <typename T>
+    void setUniform(unsigned int loc, const T& value) const;
+
 	void use() const
 	{
 		glUseProgram(handle);
