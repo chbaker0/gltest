@@ -29,5 +29,5 @@ std::size_t PointLight::writeStd430Transform(void *buffer, std::size_t offset, s
 {
     PointLight temp(*this);
     temp.position = glm::vec3(transformation * glm::vec4(temp.position, 1.0f));
-    temp.writeStd430(buffer, offset, size);
+    return temp.writeStd430(buffer, offset, size);
 }

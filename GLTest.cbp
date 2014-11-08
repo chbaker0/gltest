@@ -71,6 +71,8 @@
 			<Add library="libopengl32.a" />
 			<Add library="libzlib.dll.a" />
 		</Linker>
+		<Unit filename="AlignedWrite.cpp" />
+		<Unit filename="AlignedWrite.hpp" />
 		<Unit filename="ContextWindow.cpp" />
 		<Unit filename="ContextWindow.hpp" />
 		<Unit filename="GLTest.mk" />
