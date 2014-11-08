@@ -25,7 +25,16 @@ unsigned int constexpr GLAlignOf()
     return TypeAlignmentMap<T>::value;
 }
 
-template <typename T, typename Dummy>
+#define ENABLE_IF_IS_CONTAINER(T) \
+typename \
+std::enable_if<\
+    std::is_same<\
+        typename boost::fusion::traits::is_sequence<T>::type,\
+        boost::mpl::false_\
+    >::value\
+>::type
+
+template <typename T, typename Dummy = void>
 struct GLStd430Writer;
 
 template <typename T>
@@ -37,7 +46,10 @@ struct GLStd430Writer<T, typename std::enable_if<
                         >::type
                      >
 {
+    bool operator()(const T& data, void *buffer, std::size_t offset, std::size_t maxSize)
+    {
 
+    }
 };
 
 template <typename T>
@@ -51,5 +63,7 @@ struct GLStd430Writer<T, typename std::enable_if<
 {
 
 };
+
+#undef ENABLE_IF_IS_CONTAINER
 
 #endif // ALIGNED_WRITE_HPP_INCLUDED

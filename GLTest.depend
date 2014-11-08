@@ -241,3 +241,14 @@
 	"ShaderProgram.hpp"
 	"ShaderProgramManager.hpp"
 
+1415424315 source:c:\development\projects\opengl\gltest\alignedwrite.cpp
+	"AlignedWrite.hpp"
+
+1415427058 c:\development\projects\opengl\gltest\alignedwrite.hpp
+	"Includes.h"
+	<boost/fusion/sequence.hpp>
+	<boost/fusion/include/sequence.hpp>
+	<boost/fusion/support/is_sequence.hpp>
+	<boost/fusion/include/is_sequence.hpp>
+	<glm/glm.hpp>
+
