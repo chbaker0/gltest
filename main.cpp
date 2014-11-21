@@ -115,7 +115,7 @@ int main()
 //                 PointLight::calcArraySizeStd430(2),
 //                 nullptr, )
 	glBufferStorage(GL_SHADER_STORAGE_BUFFER,
-                    PointLight::calcArraySizeStd430(2),
+                    PointLight::calcArraySizeStd430(3),
                     nullptr, GL_MAP_WRITE_BIT);
 
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
@@ -159,7 +159,7 @@ int main()
         for(std::size_t i = 0; i < 2; ++i)
         {
             offset = pointLightsWorldSpace[i]
-                     .writeStd430Transform(buffer, offset,
+                     .writeStd430Transform((char*) buffer, offset,
                                            PointLight::calcArraySizeStd430(2),
                                            worldCameraTransform);
         }

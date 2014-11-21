@@ -5,6 +5,9 @@
 
 #include <glm/glm.hpp>
 
+#include <boost/fusion/adapted/struct/adapt_struct.hpp>
+#include <boost/fusion/include/adapt_struct.hpp>
+
 struct PointLight
 {
     glm::vec4 intensity;
@@ -27,10 +30,17 @@ struct PointLight
             sizeStd430;
     }
 
-    std::size_t writeStd430(void *buffer, std::size_t offset, std::size_t size);
-    std::size_t writeStd430Transform(void *buffer, std::size_t offset, std::size_t size,
+    std::size_t writeStd430(char *buffer, std::size_t offset, std::size_t size);
+    std::size_t writeStd430Transform(char *buffer, std::size_t offset, std::size_t size,
                                      const glm::mat4& transformation);
 };
+
+BOOST_FUSION_ADAPT_STRUCT
+(
+    PointLight,
+    (glm::vec4, intensity)
+    (glm::vec3, position)
+)
 
 struct DirectionalLight
 {

@@ -5,14 +5,16 @@
 1414316891 d:\development\graphics\gltest\glshader.h
 	"Includes.h"
 
-1415050917 d:\development\graphics\gltest\includes.h
+1416556396 d:\development\graphics\gltest\includes.h
 	<iostream>
 	<fstream>
 	<map>
 	<string>
+	<deque>
 	<vector>
 	<algorithm>
 	<exception>
+	<functional>
 	<thread>
 	<memory>
 	<utility>
@@ -48,14 +50,16 @@
 	<glm/gtc/type_ptr.hpp>
 	<glload/gl_load.h>
 
-1415050917 source:d:\development\graphics\gltest\includes.h
+1416556396 source:d:\development\graphics\gltest\includes.h
 	<iostream>
 	<fstream>
 	<map>
 	<string>
+	<deque>
 	<vector>
 	<algorithm>
 	<exception>
+	<functional>
 	<thread>
 	<memory>
 	<utility>
@@ -85,22 +89,22 @@
 1414961420 d:\development\graphics\gltest\shader.hpp
 	"Includes.h"
 
-1414882444 d:\development\graphics\gltest\shaderprogram.hpp
+1415512657 d:\development\graphics\gltest\shaderprogram.hpp
 	"Includes.h"
 	"Shader.hpp"
 
-1414876284 source:d:\development\graphics\gltest\shader.cpp
+1415350114 source:d:\development\graphics\gltest\shader.cpp
 	"Shader.hpp"
 
-1414876288 source:d:\development\graphics\gltest\shaderprogram.cpp
+1415512657 source:d:\development\graphics\gltest\shaderprogram.cpp
 	"ShaderProgram.hpp"
-
-1415231723 source:d:\development\graphics\gltest\shaderprogrammanager.cpp
-	"ShaderProgramManager.hpp"
 	<glm/glm.hpp>
 	<glm/gtc/type_ptr.hpp>
 
-1415231683 d:\development\graphics\gltest\shaderprogrammanager.hpp
+1415512657 source:d:\development\graphics\gltest\shaderprogrammanager.cpp
+	"ShaderProgramManager.hpp"
+
+1415512657 d:\development\graphics\gltest\shaderprogrammanager.hpp
 	"Includes.h"
 	"ShaderProgram.hpp"
 
@@ -110,12 +114,15 @@
 1414900958 d:\development\graphics\gltest\contextwindow.hpp
 	"Includes.h"
 
-1414986196 source:d:\development\graphics\gltest\light.cpp
+1416557880 source:d:\development\graphics\gltest\light.cpp
 	"Light.hpp"
+	"AlignedWrite.hpp"
 
-1414985870 d:\development\graphics\gltest\light.hpp
+1416557880 d:\development\graphics\gltest\light.hpp
 	"Includes.h"
 	<glm/glm.hpp>
+	<boost/fusion/adapted/struct/adapt_struct.hpp>
+	<boost/fusion/include/adapt_struct.hpp>
 
 1415240345 source:c:\development\projects\opengl\gltest\includes.h
 	<iostream>
@@ -247,6 +254,19 @@
 1415427058 c:\development\projects\opengl\gltest\alignedwrite.hpp
 	"Includes.h"
 	<boost/fusion/sequence.hpp>
+	<boost/fusion/include/sequence.hpp>
+	<boost/fusion/support/is_sequence.hpp>
+	<boost/fusion/include/is_sequence.hpp>
+	<glm/glm.hpp>
+
+1416557688 source:d:\development\graphics\gltest\alignedwrite.cpp
+	"AlignedWrite.hpp"
+
+1416558029 d:\development\graphics\gltest\alignedwrite.hpp
+	"Includes.h"
+	<boost/fusion/sequence.hpp>
+	<boost/fusion/algorithm/iteration/for_each.hpp>
+	<boost/fusion/include/for_each.hpp>
 	<boost/fusion/include/sequence.hpp>
 	<boost/fusion/support/is_sequence.hpp>
 	<boost/fusion/include/is_sequence.hpp>

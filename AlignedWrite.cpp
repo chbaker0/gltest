@@ -2,5 +2,4 @@
 
 void test()
 {
-    GLStd430Writer<unsigned int> t;
 }
